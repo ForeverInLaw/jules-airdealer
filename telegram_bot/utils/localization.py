@@ -9,7 +9,7 @@ try:
 except ImportError:
     # This is a fallback or could indicate a circular dependency or init issue.
     # For now, we'll allow it to be None and handle it in get_text.
-    supabase_client = None 
+    supabase_client = None
 
 # Fallback local cache for texts if DB fails or for overrides
 # This part is not in the original document but can be useful.

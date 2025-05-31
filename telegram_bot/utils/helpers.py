@@ -26,7 +26,7 @@ async def format_price(price: float, currency: str = "USD", language: str = "en"
     elif currency == "RUB": # Assuming RUB for Russian
         return f"{price:.2f} ₽"
     return f"{price:.2f} {currency}"
-    
+
 async def format_product_details(product: dict, stock_info: list, language: str) -> str:
     """
     Formats product details for display.
@@ -37,16 +37,16 @@ async def format_product_details(product: dict, stock_info: list, language: str)
     name = product.get('name', 'N/A')
     if product.get('product_localization'):
         name = product['product_localization'].get('name', name)
-    
+
     description = ""
     if product.get('product_localization'):
         description = product['product_localization'].get('description', '')
 
     price_str = await format_price(float(product.get('price', 0)), language=language) # Assuming price needs currency based on lang
-    
-    details_text = await get_text("product_details_template", language, 
+
+    details_text = await get_text("product_details_template", language,
                                 default="{name}\n\n{description}\n\nPrice: {price}\n\nStock:\n{stock_list}")
-    
+
     stock_lines = []
     if stock_info:
         for stock_item in stock_info:

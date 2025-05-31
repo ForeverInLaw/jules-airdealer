@@ -141,7 +141,7 @@ async def get_product_keyboard(
     #        loc_id = stock_item.get('locations', {}).get('id')
     #        add_to_cart_loc_text = await get_text("add_to_cart_location_button", language_code, default="Add from {location_name}")
     #        builder.row(InlineKeyboardButton(
-    #            text=add_to_cart_loc_text.format(location_name=loc_name), 
+    #            text=add_to_cart_loc_text.format(location_name=loc_name),
     #            callback_data=f"addtocart_{product_id}_{loc_id}"
     #        ))
 
