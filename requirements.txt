@@ -1,4 +1,0 @@
-aiogram
-supabase
-python-dotenv
-asyncio-mqtt
